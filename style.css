@@ -1,0 +1,29 @@
+/*
+Theme Name: Divi Child
+Theme URI: http://www.elegantthemes.com/gallery/divi/
+Description: Divi Child Theme
+Author: Elegant Themes
+Author URI: http://www.elegantthemes.com
+Template: Divi
+Version: 1.0.0
+*/
+
+:root {
+	--color-primary: #1E8FFF;
+	--color-secondary: #FFD23F;
+	--color-accent: #FF2D6B;
+	--color-light: #F4F4FF;
+	--color-dark: #13132B;
+	--color-darker: #080810;
+	--color-white: #FFFFFF;
+}
+
+body, p, .et_pb_module {
+	font-family: 'Epilogue', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.et_pb_module h1, .et_pb_module h2, .et_pb_module h3,
+.et_pb_module h4, .et_pb_module h5, .et_pb_module h6 {
+	font-family: 'Jost', sans-serif;
+}
