@@ -5,4 +5,5 @@ function divi_child_enqueue_styles() {
 	wp_enqueue_style( 'divi-parent-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'divi-child-style', get_stylesheet_directory_uri() . '/style.css', array( 'divi-parent-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-nav', get_stylesheet_directory_uri() . '/nav.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
+	wp_enqueue_style( 'divi-child-buttons', get_stylesheet_directory_uri() . '/buttons.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 }
