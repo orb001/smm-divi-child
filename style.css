@@ -41,14 +41,16 @@ h6,
 
 /* Remove default bullets */
 .x-list ul,
-.check-list ul {
+.check-list ul,
+.bluecheck-list ul {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
 }
 
 .x-list li,
-.check-list li {
+.check-list li,
+.bluecheck-list li {
   position: relative;
   padding-left: 1.6em;
   margin-bottom: 10px;
@@ -68,6 +70,22 @@ h6,
   position: absolute;
   left: 0;
   top: 0;
+}
+
+/* ✓ for bluecheck-list items, e.g. pricing card feature lists */
+.bluecheck-list li {
+  padding-left: 1.75em;
+  margin-bottom: 16px;
+}
+
+.bluecheck-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.1em;
 }
 
 .divsteps {
@@ -121,4 +139,26 @@ h6,
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Pink flag-corner accent, e.g. "One Engine, Three Revenue Streams" section */
+.section-pink-corner {
+  position: relative;
+}
+
+.section-pink-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  max-width: 660px;
+  height: 220px;
+  background-color: #f2507d; /* fallback so the stray transparent notch in the PNG shows pink, not the page background */
+  background-image: url('/wp-content/uploads/pink-corner-left.png');
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  pointer-events: none;
+  z-index: 1;
 }
