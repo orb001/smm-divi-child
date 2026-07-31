@@ -162,3 +162,24 @@ h6,
   pointer-events: none;
   z-index: 1;
 }
+
+/* Smaller pink corner accent, e.g. "Pick Your Engine" section */
+.section-pink-corner-sm {
+  position: relative;
+}
+
+.section-pink-corner-sm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 342px;
+  height: 174px;
+  background-color: #f2507d;
+  background-image: url('/wp-content/uploads/pink-corner-left-2.png');
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 57.5%);
+  pointer-events: none;
+  z-index: 1;
+}
