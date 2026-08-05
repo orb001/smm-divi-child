@@ -1,0 +1,75 @@
+/* Scroll-triggered paper reveal. Add the `paper-reveal` class to any
+   Divi section wrapper (Advanced tab -> CSS ID & Classes) to enable.
+   Layers two paper-cutout SVGs on top of the section -- one over the
+   top-right corner, one over the bottom-left corner (matching the
+   Section 6 design, where the bottom-left piece overlaps the row
+   image) -- each with a baked-in drop shadow. Pairs with
+   paper-reveal.js, which toggles `is-revealed` via IntersectionObserver
+   and adds `paper-reveal-js` to <html> once running -- the pieces
+   render in their final, visible position if JS is disabled or fails. */
+
+.paper-reveal {
+	position: relative;
+}
+
+.paper-reveal::before,
+.paper-reveal::after {
+	content: '';
+	position: absolute;
+	z-index: 20;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.paper-reveal::before {
+	top: 0;
+	right: 0;
+	width: 34%;
+	max-width: 657px;
+	aspect-ratio: 657 / 344;
+	background-image: url('images/paper-corner-top-right.svg');
+	background-position: top right;
+}
+
+.paper-reveal::after {
+	bottom: 0;
+	left: 0;
+	width: 33%;
+	max-width: 628px;
+	aspect-ratio: 628 / 210;
+	background-image: url('images/paper-corner-bottom-left.svg');
+	background-position: bottom left;
+}
+
+html.paper-reveal-js .paper-reveal::before,
+html.paper-reveal-js .paper-reveal::after {
+	opacity: 0;
+	transition: opacity 0.5s ease-out, transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+	will-change: opacity, transform;
+}
+
+html.paper-reveal-js .paper-reveal::before {
+	transform: translate(70px, -70px);
+}
+
+html.paper-reveal-js .paper-reveal::after {
+	transform: translate(-70px, 70px);
+}
+
+html.paper-reveal-js .paper-reveal.is-revealed::before,
+html.paper-reveal-js .paper-reveal.is-revealed::after {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.paper-reveal-js .paper-reveal::before,
+	html.paper-reveal-js .paper-reveal::after,
+	html.paper-reveal-js .paper-reveal.is-revealed::before,
+	html.paper-reveal-js .paper-reveal.is-revealed::after {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
