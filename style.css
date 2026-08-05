@@ -204,3 +204,151 @@ h6,
   pointer-events: none;
   z-index: 1;
 }
+
+/* "Get Valuable Insights" newsletter signup — Gravity Form styled as a
+   single white pill: mail-icon email field on the left, an inset pink
+   Subscribe button on the right. Scoped to the gf-subscribe_wrapper /
+   gf-subscribe classes set in the form's Appearance settings. Overrides
+   use !important where needed to beat Gravity Forms' own gravity-theme
+   stylesheet. */
+
+.gf-subscribe_wrapper {
+  max-width: 560px;
+}
+
+.gf-subscribe_wrapper .gform_heading {
+  display: none;
+}
+
+.gf-subscribe .gform_body {
+  width: 100%;
+}
+
+.gf-subscribe .gform_fields {
+  display: flex !important;
+  align-items: center;
+  column-gap: 16px;
+  background-color: var(--color-white);
+  border-radius: 100px;
+  box-shadow: 0 8px 24px rgba(19, 19, 43, 0.08);
+  padding: 10px 20px 10px 32px;
+}
+
+.gf-subscribe .gfield {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.gf-subscribe .gfield--type-email {
+  flex: 1 1 auto;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0;
+}
+
+.gf-subscribe .gfield--type-submit {
+  flex: 0 0 auto;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.gf-subscribe .hidden_label .gform-field-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.gf-subscribe .ginput_container_email {
+  margin: 0 !important;
+}
+
+.gf-subscribe input[type='email'] {
+  display: block;
+  width: 100%;
+  border: none !important;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxNiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzZiNmI3MiIgZD0iTTIgMTZxLS44MjQgMC0xLjQxMi0uNTg4QTEuOTMgMS45MyAwIDAgMSAwIDE0VjJRMCAxLjE3Ni41ODguNTg4QTEuOTMgMS45MyAwIDAgMSAyIDBoMTZxLjgyNCAwIDEuNDEzLjU4OFEyMCAxLjE3NSAyMCAydjEycTAgLjgyNS0uNTg3IDEuNDEyQTEuOTMgMS45MyAwIDAgMSAxOCAxNnptOC03TDIgNHYxMGgxNlY0em0wLTIgOC01SDJ6TTIgNFYydjEyeiIvPjwvc3ZnPg==") no-repeat left center;
+  background-size: 20px 16px;
+  padding: 0 0 0 40px !important;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  color: var(--color-dark);
+  box-shadow: none !important;
+}
+
+.gf-subscribe input[type='email']::placeholder {
+  font-weight: 500;
+  color: #6b6b72;
+}
+
+.gf-subscribe input[type='email']:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.gf-subscribe .gform-button {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.16px;
+  color: var(--color-white) !important;
+  background-color: var(--color-accent) !important;
+  border: none !important;
+  border-radius: 100px !important;
+  padding: 20px 40px !important;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gf-subscribe .gform-button:hover {
+  background-color: #e0245a !important;
+}
+
+.gf-subscribe_wrapper .gform_footer,
+.gf-subscribe_wrapper .gform-footer {
+  display: none;
+}
+
+.gf-subscribe_wrapper .validation_message {
+  color: #d1293d;
+  font-size: 13px;
+  margin-top: 6px;
+  padding-left: 32px;
+}
+
+.gf-subscribe.gform_validation_error .gform_fields {
+  box-shadow: 0 0 0 2px #d1293d;
+}
+
+.gf-subscribe_wrapper .gform_confirmation_message {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  color: var(--color-dark);
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .gf-subscribe .gform_fields {
+    flex-wrap: wrap;
+    row-gap: 12px;
+    border-radius: 28px;
+    padding: 16px;
+  }
+
+  .gf-subscribe .gfield--type-email,
+  .gf-subscribe .gfield--type-submit {
+    flex: 1 1 100%;
+  }
+
+  .gf-subscribe input[type='email'] {
+    padding-left: 28px !important;
+  }
+
+  .gf-subscribe .gform-button {
+    width: 100%;
+  }
+}
