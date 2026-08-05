@@ -107,11 +107,18 @@ html.paper-reveal-js .paper-reveal.is-revealed::after {
 
 .paper-reveal-right::after {
 	bottom: 0;
+	right: -1vw;
 	z-index: 20;
 	height: 100%;
 	aspect-ratio: 291 / 440;
 	background-image: url('images/paper-corner-right-2.svg');
 	background-position: bottom right;
+}
+
+@media (max-width: 1249px) {
+	.paper-reveal-right::after {
+		display: none;
+	}
 }
 
 html.paper-reveal-js .paper-reveal-right::before,
