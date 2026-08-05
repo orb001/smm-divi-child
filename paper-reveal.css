@@ -45,7 +45,7 @@
 html.paper-reveal-js .paper-reveal::before,
 html.paper-reveal-js .paper-reveal::after {
 	opacity: 0;
-	transition: opacity 0.5s ease-out, transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transition: opacity 0.35s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 	will-change: opacity, transform;
 }
 
@@ -68,6 +68,79 @@ html.paper-reveal-js .paper-reveal.is-revealed::after {
 	html.paper-reveal-js .paper-reveal::after,
 	html.paper-reveal-js .paper-reveal.is-revealed::before,
 	html.paper-reveal-js .paper-reveal.is-revealed::after {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Variant: both paper pieces stacked over the top-right corner only
+   (e.g. Section 8, over the row image). Add `paper-reveal-right`
+   instead of `paper-reveal` to the section wrapper. The larger piece
+   sits above the smaller one, which is nudged down so its edge peeks
+   out just past the larger piece's edge -- the stepped-edge look from
+   the design. */
+
+.paper-reveal-right {
+	position: relative;
+}
+
+.paper-reveal-right::before,
+.paper-reveal-right::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.paper-reveal-right::before {
+	top: 0;
+	z-index: 21;
+	width: 42.6%;
+	max-width: 818px;
+	aspect-ratio: 818 / 353;
+	background-image: url('images/paper-corner-right-1.svg');
+	background-position: top right;
+}
+
+.paper-reveal-right::after {
+	bottom: 0;
+	z-index: 20;
+	height: 100%;
+	aspect-ratio: 291 / 440;
+	background-image: url('images/paper-corner-right-2.svg');
+	background-position: bottom right;
+}
+
+html.paper-reveal-js .paper-reveal-right::before,
+html.paper-reveal-js .paper-reveal-right::after {
+	opacity: 0;
+	will-change: opacity, transform;
+}
+
+html.paper-reveal-js .paper-reveal-right::before {
+	transform: translate(70px, -70px);
+	transition: opacity 0.35s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.paper-reveal-js .paper-reveal-right::after {
+	transform: translate(70px, 0);
+	transition: opacity 0.35s ease-out 0.3s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+html.paper-reveal-js .paper-reveal-right.is-revealed::before,
+html.paper-reveal-js .paper-reveal-right.is-revealed::after {
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.paper-reveal-js .paper-reveal-right::before,
+	html.paper-reveal-js .paper-reveal-right::after,
+	html.paper-reveal-js .paper-reveal-right.is-revealed::before,
+	html.paper-reveal-js .paper-reveal-right.is-revealed::after {
 		opacity: 1;
 		transform: none;
 		transition: none;
