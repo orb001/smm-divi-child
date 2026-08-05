@@ -183,3 +183,24 @@ h6,
   pointer-events: none;
   z-index: 1;
 }
+
+/* Yellow paper-triangle corner accent, e.g. "More Revenue From The Same Show" section */
+.section-yellow-corner {
+  position: relative;
+}
+
+.section-yellow-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 185px;
+  height: 163px;
+  background-color: #f8d45e; /* fallback to match the paper's yellow before the image loads */
+  background-image: url('/wp-content/uploads/yellow-paper-triangle.png');
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(4% 0, 100% 0, 100% 81%, 0 100%);
+  pointer-events: none;
+  z-index: 1;
+}
