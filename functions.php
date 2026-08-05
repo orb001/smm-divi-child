@@ -9,11 +9,13 @@ function divi_child_enqueue_styles() {
 	wp_enqueue_style( 'divi-child-nav', get_stylesheet_directory_uri() . '/nav.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-buttons', get_stylesheet_directory_uri() . '/buttons.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-card-reveal', get_stylesheet_directory_uri() . '/card-reveal.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
+	wp_enqueue_style( 'divi-child-image-reveal', get_stylesheet_directory_uri() . '/image-reveal.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-testimonials', get_stylesheet_directory_uri() . '/testimonials.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 }
 
 add_action( 'wp_enqueue_scripts', 'divi_child_enqueue_scripts' );
 function divi_child_enqueue_scripts() {
 	wp_enqueue_script( 'divi-child-card-reveal', get_stylesheet_directory_uri() . '/card-reveal.js', array(), wp_get_theme()->get('Version'), true );
+	wp_enqueue_script( 'divi-child-image-reveal', get_stylesheet_directory_uri() . '/image-reveal.js', array(), wp_get_theme()->get('Version'), true );
 	wp_enqueue_script( 'divi-child-testimonials', get_stylesheet_directory_uri() . '/testimonials.js', array(), wp_get_theme()->get('Version'), true );
 }
