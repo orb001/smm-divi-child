@@ -28,5 +28,6 @@ function divi_child_enqueue_scripts() {
 	wp_enqueue_script( 'divi-child-card-reveal', get_stylesheet_directory_uri() . '/card-reveal.js', array(), divi_child_asset_version( '/card-reveal.js' ), true );
 	wp_enqueue_script( 'divi-child-image-reveal', get_stylesheet_directory_uri() . '/image-reveal.js', array(), divi_child_asset_version( '/image-reveal.js' ), true );
 	wp_enqueue_script( 'divi-child-paper-reveal', get_stylesheet_directory_uri() . '/paper-reveal.js', array(), divi_child_asset_version( '/paper-reveal.js' ), true );
+	wp_enqueue_script( 'divi-child-hero-origami', get_stylesheet_directory_uri() . '/hero-origami.js', array(), divi_child_asset_version( '/hero-origami.js' ), true );
 	wp_enqueue_script( 'divi-child-testimonials', get_stylesheet_directory_uri() . '/testimonials.js', array(), divi_child_asset_version( '/testimonials.js' ), true );
 }
