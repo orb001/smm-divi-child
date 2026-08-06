@@ -11,6 +11,7 @@ function divi_child_enqueue_styles() {
 	wp_enqueue_style( 'divi-child-card-reveal', get_stylesheet_directory_uri() . '/card-reveal.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-image-reveal', get_stylesheet_directory_uri() . '/image-reveal.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-paper-reveal', get_stylesheet_directory_uri() . '/paper-reveal.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
+	wp_enqueue_style( 'divi-child-hero-origami', get_stylesheet_directory_uri() . '/hero-origami.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'divi-child-testimonials', get_stylesheet_directory_uri() . '/testimonials.css', array( 'divi-child-style' ), wp_get_theme()->get('Version') );
 }
 

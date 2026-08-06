@@ -1,0 +1,49 @@
+/* Section 1 hero: three white "paper flap" SVGs layered over the hero
+   photo to match designs/Section 1 - Hero v1 - origami.png. Add the
+   `hero-origami` class (Advanced -> CSS ID & Classes) to the row that's
+   already absolute-positioned to cover the hero section (the row
+   wrapping the hero image) -- these overlays are sized as percentages
+   of that same box, so they only land correctly on that element.
+
+   Percentages below were measured directly off the design mockup
+   (1920 x 847 canvas): flap-left sits flush with the photo's left
+   edge at 40.8% in, spanning full height; flap-top and flap-bottom
+   are flush with the top-right and bottom-right corners. */
+
+.hero-origami::before,
+.hero-origami::after {
+	content: '';
+	position: absolute;
+	z-index: 5;
+	pointer-events: none;
+}
+
+.hero-origami::before {
+	left: 0;
+	top: 0;
+	width: 69.1%;
+	height: 100%;
+	background-repeat: no-repeat, no-repeat;
+	background-position: left, right;
+	/* first layer: solid #fdfdfd backing (a flat gradient, since background-color
+	   isn't layerable) sized to ONLY the 40.8% strip left of the flap's own
+	   bounding box -- it must stop there so it doesn't paint over the SVG's
+	   transparent notch, which is what lets the photo peek through */
+	background-size: 40.8% 100%, 100%;
+	background-image: linear-gradient(#fdfdfd, #fdfdfd), url('images/flap-left.svg');
+}
+
+.hero-origami::after {
+	inset: 0;
+	background-repeat: no-repeat, no-repeat;
+	background-image: url('images/flap-top.svg'), url('images/flap-bottom.svg');
+	background-position: top right, bottom right;
+	background-size: 20.9% auto, 23% auto;
+}
+
+@media (max-width: 980px) {
+	.hero-origami::before,
+	.hero-origami::after {
+		display: none;
+	}
+}
